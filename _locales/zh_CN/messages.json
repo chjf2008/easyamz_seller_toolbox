@@ -1,0 +1,13 @@
+{
+
+	"extName": {
+		"message": "EasyAMZ卖家工具箱"
+	},
+	"extDesc": {
+		"message": "本工具箱包含top100数据下载，关键词搜索结果下载，产品评论，QA下载；关键词排名检测，竞品下载，全站点asin上架检测。产品词频，评论词频"
+	},
+
+	"extShortName": {
+		"message": "EasyAMZ 大数据选品"
+	}
+}

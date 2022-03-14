@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>用户登录</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="/assets/img/favicon.png" rel="icon">
+    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <!--<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"-->
+    <!--rel="stylesheet">-->
+
+    <!-- Vendor CSS Files -->
+    <link href="/assets/js/venders/bootstrap4/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/bootstrap-extend.min.css">
+    <link rel="stylesheet" href="/assets/css/site.min.css">
+    <link href="/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/js/venders/icofont/icofont.min.css">
+
+
+    <!--<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">-->
+    <!--<link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">-->
+    <!--<link href="assets/vendor/venobox/venobox.css" rel="stylesheet">-->
+    <!--<link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">-->
+
+    <!-- Template Main CSS File -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="/assets/js/venders/bootstrap-table/bootstrap-table.min.css">
+    <link rel="stylesheet" href="/assets/css/vendor/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/vendor/web-icons/web-icons.min.css">
+
+
+    <!-- =======================================================
+    * Template Name: Groovin - v2.2.0
+    * Template URL: https://bootstrapmade.com/groovin-free-bootstrap-theme/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body class="p-0 m-0">
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
+
+            <h1 class="logo mr-auto"><a id="id_app_title" href="/pages/home.html">easyamz</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+            <nav class="nav-menu d-none d-lg-block">
+                <ul>
+                    <li class="active"><a href="/pages/home.html">首页</a></li>
+                    <li><a target="_blank" href="http://www.easyamz.cn/amazon-cn-sellers/">卖家数据库</a></li>
+                    <li><a target="_blank" href="http://www.easyamz.cn/live/tasks/">产品开发调研</a></li>
+                    <li class="drop-down"><a href="#services">监控</a>
+                        <ul>
+                            <li><a target="_blank" href="http://www.easyamz.cn/track/asins/">产品优化监控</a></li>
+                            <li><a target="_blank" href="http://www.easyamz.cn/track/keywords/">关键词排名跟踪</a></li>
+                        </ul>
+                    </li>
+                    <li class="drop-down"><a href="">工具箱</a>
+                        <ul>
+                            <li><a target="_blank" href="http://www.easyamz.cn/reviews/">产品评论下载</a></li>
+                            <li><a target="_blank" href="http://www.easyamz.cn/amazon-words-frequency/">云端词频</a></li>
+                            <!--                        <li><a href="#">词频插件下载</a></li>-->
+                            <li><a target="_blank" href="https://chrome.google.com/webstore/detail/images-finder/nlfbdfoflejnfmegadjbcbollehokmeg?hl=zh-CN">高清图片打包下载</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#contact">联系我们</a></li>
+
+                </ul>
+            </nav>
+            <!-- .nav-menu -->
+
+            <a href="#" class="get-started-btn scrollto">登录</a>
+
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <main id="main">
+
+
+        <!-- ======= Portfolio Details Section ======= -->
+        <section id="portfolio-details" class="portfolio-details pt-10 mt-80 pb-5">
+            <!--<div class="container">-->
+
+            <div class="panel">
+
+                <div class="panel-body pt-5">
+
+                    <section id="services" class="services pt-5 pb-10">
+                        <div class="container">
+                            <br>
+
+                            <div class="section-title">
+                                <h1>用户登录</h1>
+                            </div>
+
+
+                            <div class="row text-center">
+
+
+                                <div class="col-md-3"></div>
+
+                                <div class="col-md-6">
+
+                                    <div id="id_err_message" role="alert" class="alert alert-danger alert-dismissible" style="display: none;"></div>
+
+                                    <div class="form-group floating mb-20">
+                                        <input type="text" class="form-control empty" id="id_phone" placeholder="用户名">
+                                    </div>
+                                    <div class="form-group floating mb-20">
+                                        <input type="password" class="form-control empty" id="id_pwd" placeholder="密码" name="password">
+                                    </div>
+
+
+                                    <div class="form-group floating">
+                                        <button id="id_btn_login" type="button" class="btn btn-primary m-10">登 录
+                                    </button>
+                                        <button id="id_btn_reg" type="button" class="btn btn-primary m-10">注 册
+                                    </button>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="col-md-3"></div>
+                            </div>
+
+
+                        </div>
+                    </section>
+
+
+                </div>
+
+            </div>
+
+
+            <!--</div>-->
+        </section>
+        <!-- End Portfolio Details Section -->
+
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-info">
+                            <h3>EASYAMZ</h3>
+                            <p>
+                                <!--                            A108 Adam Street <br>-->
+                                <!--                            NY 535022, USA<br>-->
+
+                                微信客服: wooseeker<br> 公众号: easyamz<br> 微博:
+                                <a style="color: white;" target="_blank" href="https://www.weibo.com/easyamz">
+                            easyamz</a><br>
+                                <strong>电话:</strong> +86 180 1993 1526<br>
+                                <strong>邮件:</strong> contact@easyamz.com<br>
+                            </p>
+                            <div class="social-links mt-3">
+                                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                                <!--<a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>-->
+                                <!--<a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>有用链接</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">词频插件</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">图片打包下载插件</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">卖家工具箱</a></li>
+                            <!--<li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>-->
+                            <!--<li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>-->
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>我们的服务</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">亚马逊即刻数据调研</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">数据跟踪</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a name="contact" href="#">卖家数据库</a></li>
+                            <!--<li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>-->
+                            <!--<li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>-->
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                        <h4>联系我们</h4>
+                        <p>可以通过微信，公众号，新浪微博来联系我们！</p>
+                        <img height="80" src="/images/wechart1.png">
+
+
+                        <img class="pl-20" height="80" src="/images/gzh.png" />
+
+                        <img class="pl-20" height="80" src="/images/sina.png" />
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright pt-10">
+                &copy; Copyright <strong><span>easyamz.com</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/groovin-free-bootstrap-theme/ -->
+                Designed by <a target="_blank" href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top"><i class="icon fa-level-up"></i></a>
+
+
+    <script src="../assets/js/venders/Jquery/jquery-latest.min.js"></script>
+
+
+    <!-- Vendor JS Files -->
+    <!--<script src="assets/vendor/jquery/jquery.min.js"></script>-->
+    <!--<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+    <!--<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>-->
+    <!--<script src="assets/vendor/php-email-form/validate.js"></script>-->
+    <!--<script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>-->
+    <script src="assets/vendor/counterup/counterup.min.js"></script>
+    <!--<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>-->
+    <!--<script src="assets/vendor/venobox/venobox.min.js"></script>-->
+    <!--<script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>-->
+
+    <!-- Template Main JS File -->
+    <!--<script src="assets/js/main.js"></script>-->
+
+
+    <script src="assets/js/venders/Bootstrap/bootstrap.min.js"></script>
+    <script src="/assets/js/venders/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="/assets/js/venders/bootstrap-table/extensions/bootstrap-table-zh-CN.min.js"></script>
+
+    <script src="/scripts/entity/Message.js"></script>
+    <script src="/scripts/entity/Response.js"></script>
+
+    <script src="/scripts/entity/Const.js"></script>
+    <script src="/scripts/API.js"></script>
+    <script src="/scripts/API/Amazon.js"></script>
+    <script src="/scripts/API/Marketplace.js"></script>
+
+    <script src="/scripts/API/APP.js"></script>
+
+    <script src="/scripts/Pages/login.js"></script>
+
+
+</body>
+
+</html>

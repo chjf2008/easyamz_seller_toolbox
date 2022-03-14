@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>easyamz榜单下载</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="/assets/img/favicon.png" rel="icon">
+    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Vendor CSS Files -->
+    <link rel="stylesheet" href="/assets/js/venders/Bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-extend.min.css">
+    <link rel="stylesheet" href="/assets/css/vendor/flag-icon-css/flag-icon.min.css">
+
+    <link rel="stylesheet" href="/assets/js/venders/bootstrap-table/bootstrap-table.min.css">
+    <link rel="stylesheet" href="/assets/css/vendor/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/vendor/web-icons/web-icons.min.css">
+    <link rel="stylesheet" href="/assets/js/venders/magnific-popup/magnific-popup.min.css">
+    <link rel="stylesheet" href="/assets/js/venders/jquery.dataTables/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="/assets/js/venders/icofont/icofont.min.css">
+    <link rel="stylesheet" href="/assets/js/venders/bootstrap-table/extensions/bootstrap-table-fixed-columns.min.css">
+    <link rel="stylesheet" href="/assets/js/venders/select2/select2.min.css">
+    <link rel="stylesheet" href="/assets/js/venders/bootstrap-select/bootstrap-select.css">
+
+
+    <link rel="stylesheet" href="/assets/css/site.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <style>
+        .a-icon.a-icon-star {
+            background-image: url(../images/ico_bg.png);
+        }
+        
+        .a-icon-star {
+            position: relative;
+            vertical-align: text-top
+        }
+        
+        .a-icon-star,
+        .a-icon-star-small {
+            height: 18px;
+            width: 80px
+        }
+        
+        .a-icon.a-icon-star {
+            background-size: 512px 256px;
+            background-repeat: no-repeat;
+        }
+        
+        .a-icon {
+            display: inline-block;
+        }
+        
+        .a-star-5 {
+            background-position: -166px -36px
+        }
+        
+        .a-star-4 {
+            background-position: -84px -8px
+        }
+        
+        .a-star-3 {
+            background-position: -84px -48px
+        }
+        
+        .a-star-2 {
+            background-position: -181px -76px
+        }
+        
+        .a-star-1 {
+            background-position: -375px -144px
+        }
+        
+        .a-star-0 {
+            background-position: -278px -100px
+        }
+        
+        .a-star-4-5 {
+            background-position: -84px -28px
+        }
+        
+        .a-star-3-5 {
+            background-position: -181px -56px
+        }
+        
+        .a-star-2-5 {
+            background-position: -99px -68px
+        }
+        
+        .a-star-1-5 {
+            background-position: -390px -164px
+        }
+        
+        .a-star-0-5 {
+            background-position: -278px -120px
+        }
+        
+        .a-icon-prime.a-icon-small {
+            width: 42px;
+            height: 12px;
+            background-position: -154px -52px
+        }
+        
+        .a-icon-prime {
+            background-image: url(https://m.media-amazon.com/images/S/sash/G1_iOHJcvIbQQBl.png)
+        }
+        
+        .a-icon-prime {
+            vertical-align: baseline
+        }
+        
+        .a-icon-prime {
+            background-size: 512px 256px;
+            background-repeat: no-repeat
+        }
+        
+        .c3-axis-y>.tick {
+            fill: black;
+            font-style: italic;
+            font-family: "Times New Roman";
+            font-size: 15px;
+        }
+        
+        .c3-axis-x>.tick {
+            fill: green;
+            font-style: oblique;
+            font-family: "Times New Roman";
+            font-size: 10px;
+        }
+    </style>
+
+
+</head>
+
+<body class="p-0 m-0">
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
+
+            <h1 class="logo mr-auto"><a id="id_app_title" href="/pages/home.html">easyamz</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+            <nav class="nav-menu d-none d-lg-block">
+                <ul>
+                    <li class="active"><a href="/pages/home.html">首页</a></li>
+                    <li><a href="/pages/tutorial.html">教程</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+            <!-- .nav-menu -->
+
+            <a href="#" class="get-started-btn scrollto">登录</a>
+
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <div class="page">
+
+        <main id="main">
+
+            <!-- ======= Breadcrumbs ======= -->
+            <section id="breadcrumbs" class="breadcrumbs pt-5 pb-5">
+                <div class="container">
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4>TOP100数据下载</h4>
+                        <ol>
+                            <li><a href="/pages/home.html">工具箱首页</a></li>
+                            <li>top100数据下载</li>
+                        </ol>
+                    </div>
+
+                </div>
+            </section>
+            <!-- End Breadcrumbs -->
+
+            <!-- ======= Portfolio Details Section ======= -->
+            <section class="content pt-10">
+                <div class="panel mb-5">
+
+                    <div class="panel-body">
+
+                        <div role="alert" class="alert alert-alt alert-info alert-dismissible">
+
+
+                            <div class="row">
+                                <div class="col-md-12 text-left">
+                                    <p class="grey-500">
+                                        <i class="icon fa-microphone blue-600"></i> 搜索结果基于本电脑浏览器配置,下载速度取决于电脑网速，为了更准确的数据，请先设置目的市场地址邮编。
+                                        <br>
+                                    </p>
+                                    <p id="id_zipcode" class="grey-500"></p>
+                                    <p><i class="icon fa-warning red-600"></i> 利用本插件高频次下载亚马逊数据，会导致无法正常打开亚马逊页面，轻则需要输入验证码，重则禁止访问亚马逊。 请合理使用本插件!!！
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-12  ml-10 mr-10 text-left">
+                                    <div id="id_err_message" role="alert" class="form-inline alert alert-danger alert-dismissible" style="display: none;">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+
+
+
+                                <div class="col-md-6">
+                                    <div class="row col-md-12 ml-10 mr-10" id="id_progress_bar">
+                                        <h6>本地详情进度：0/0(0.00%)</h6><i data-target="local" class="ml-5 icon fa-refresh blue-600"></i>
+                                        <div class="progress w-full mb-5" style="height: 20px;">
+                                            <div class="progress-bar progress-bar-striped active" style="width: 0%" role="progressbar"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row col-md-12 ml-10 mr-10" id="id_cloud_progress_bar">
+                                        <h6>云端进度(不适用)</h6><i data-target="cloud" class="ml-5 icon fa-refresh blue-600"></i>
+                                        <div class="progress w-full mb-5" style="height: 20px;">
+                                            <div class="progress-bar progress-bar-striped active" style="width: 0%" role="progressbar"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+
+                            <div class="row">
+
+
+                                <div class="col-md-12">
+                                    <div class="row col-md-12 ml-10 mr-10" id="id_cloud_local_progress_bar" style="display: none;">
+                                        <h6>同步进度(不适用)</h6>
+                                        <div class="progress w-full mb-5" style="height: 20px;">
+                                            <div class="progress-bar progress-bar-striped active" style="width: 0%" role="progressbar"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+
+
+
+                            <div class="row">
+
+                                <div class="form-inline mb-20 mt-10">
+
+
+                                    <div class="form-group text-center">
+                                        <div class="input-search">
+                                            <!--                                    <button id="id_btn_apply" type="submit" class="input-search-btn"><i-->
+                                            <!--                                            class="icon wb-search"></i></button>-->
+                                            <input id="id_start_url" type="text" class="form-control" placeholder="某个类目的榜单链接，支持热销棒和新品榜" style="width:800px;">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label class="checkbox-inline">
+                                                    <input type="checkbox" id="id_crawl_children"
+                                                           value="fba">&nbsp;下载所有子类目</label>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button id="id_btn_apply" class="btn btn-primary form-control" type="button">开始</button>
+
+
+                                        <button id="id_btn_stop" type="button" class="btn btn-secondary ml-20" style="display: none;">停 止
+                                            </button>
+                                    </div>
+
+                                </div>
+                                <hr/>
+                            </div>
+
+
+                            <div class="row">
+
+
+                                <div class="form-inline mb-1">
+                                    <div class="form-group">
+                                        <div class="form-group font-weight-600">模糊搜索:</div>
+                                        <div class="input-group"><select class="form-control form-control-sm w-100" id="id_txt_search_field">
+                                                <option value="title">标题</option>
+                                            </select>&nbsp; <input type="input" class="form-control form-control-sm" style="width:470px;" id="id_search_keywords" placeholder="支持模糊搜索，不区分大小写！"></div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-inline">
+                                    <div class="form-group">
+                                        <label class="form-control-label font-weight-600">价格区间</label>
+
+                                    </div>
+
+                                    <div class="form-group">
+
+                                        <input type="text" class="form-control form-control-sm w-100" id="id_price_min" placeholder="最小值" autocomplete="off">
+
+                                        <input type="text" class="form-control form-control-sm w-100" placeholder="最大值" autocomplete="off" id="id_price_max">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-control-label font-weight-600">评分区间</label>
+                                    </div>
+
+                                    <div class="form-group">
+
+                                        <input type="text" class="form-control form-control-sm w-100" placeholder="最小值" autocomplete="off" id="id_rating_min">
+
+                                        <input type="text" class="form-control form-control-sm w-100" placeholder="最大值" autocomplete="off" id="id_rating_max">
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-control-label font-weight-600">评论区间</label>
+
+                                    </div>
+
+                                    <div class="form-group">
+
+                                        <input type="text" class="form-control form-control-sm w-100" placeholder="最小值" autocomplete="off" id="id_reviews_nb_min">
+
+                                        <input type="text" class="form-control form-control-sm w-100" placeholder="最大值" autocomplete="off" id="id_reviews_nb_max">
+                                    </div>
+
+
+
+                                    <div class="form-group">
+                                        <label class="form-control-label font-weight-600">问答区间</label>
+                                    </div>
+
+                                    <div class="form-group">
+
+                                        <input type="text" class="form-control form-control-sm w-100" placeholder="最小值" autocomplete="off" id="id_qa_min">
+
+                                        <input type="text" class="form-control form-control-sm w-100" placeholder="最大值" autocomplete="off" id="id_qa_max">
+                                    </div>
+
+
+                                </div>
+                                <div class="form-inline">
+
+
+                                    <div class="form-group">
+                                        <label class="form-control-label font-weight-600">大类排名</label>
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        <select multiple class="form-control form-control-sm w-200" title="所有类目" id="id_rank_category_0">
+                                                                    <option value="">无数据</option>
+                                                                </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-control-label font-weight-600">排名区间</label>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-sm w-100" id="id_rank_number_0_min" placeholder="最小值">
+                                        <input type="text" class="form-control form-control-sm w-100" id="id_rank_number_0_max" placeholder="最大值">
+
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-control-label font-weight-600">小类排名</label>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <select class="form-control form-control-sm w-200" id="id_rank_category_1">
+                                                    <option value="">无数据</option>
+                                                </select>
+
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label class="form-control-label font-weight-600">排名区间</label>
+
+                                    </div>
+
+                                    <div class="form-group">
+
+                                        <input type="text" class="form-control form-control-sm w-100" id="id_rank_number_1_min" placeholder="最小值">&nbsp;
+
+                                        <input type="text" class="form-control form-control-sm w-100" id="id_rank_number_1_max" placeholder="最大值">
+
+
+                                    </div>
+
+
+                                    <div class="form-inline">
+
+                                        <div class="form-group">
+                                            <label class="form-control-label font-weight-600">上架日期</label>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="radio-custom radio-default radio-inline">
+                                                <input type="radio" checked="checked" name="available_date" id="available_date_0" value="">
+                                                <label for="available_date_0">不限制</label>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-group">
+
+
+                                            <div class="radio-custom radio-default radio-inline">
+                                                <input type="radio" name="available_date" id="available_date_1" value="day3">
+                                                <label for="available_date_1">近3天</label>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="radio-custom radio-default radio-inline">
+                                                <input type="radio" name="available_date" id="available_date_2" value="day7">
+                                                <label for="available_date_2">近7天</label>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="radio-custom radio-default radio-inline">
+                                                <input type="radio" name="available_date" id="available_date_3" value="day15">
+                                                <label for="available_date_3">近15天</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="radio-custom radio-default radio-inline">
+                                                <input type="radio" name="available_date" id="available_date_4" value="month1">
+                                                <label for="available_date_4">近1个月</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="radio-custom radio-inline">
+                                                <input type="radio" name="available_date" id="available_date_5" value="month2">
+                                                <label for="available_date_5">近2个月</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="radio-custom radio-default radio-inline">
+                                                <input type="radio" name="available_date" id="available_date_6" value="month3">
+                                                <label for="available_date_6">近3个月</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="radio-custom radio-default radio-inline">
+                                                <input type="radio" name="available_date" id="available_date_7" value="month6">
+                                                <label for="available_date_7">近半年</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="radio-custom radio-default radio-inline">
+                                                <input type="radio" name="available_date" id="available_date_8" value="year1">
+                                                <label for="available_date_8">近一年</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="radio-custom radio-default radio-inline">
+                                                <input type="radio" name="available_date" id="available_date_9" value="year2">
+                                                <label for="available_date_9">近2年</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="radio-custom radio-default radio-inline">
+                                                <input type="radio" name="available_date" id="available_date_10" value="year3">
+                                                <label for="available_date_10">近3年</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="radio-custom radio-default radio-inline">
+                                                <input type="radio" name="available_date" id="available_date_11" value="year4">
+                                                <label for="available_date_11">近4年</label>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="form-inline">
+                                    <div class="form-group">
+                                        <label class="form-control-label font-weight-600">发货方式</label>
+
+                                    </div>
+
+                                    <div class="form-group w-200">
+
+                                        <label class="checkbox-inline"><input type="checkbox"
+                                                                                  checked="checked"
+                                                                                  name=""
+                                                                                  value=""
+                                                                                  id="id_shipped_by">&nbsp;全部</label>
+                                        <label class="checkbox-inline"><input type="checkbox"
+                                                                                  name="name_shipped_by"
+                                                                                  checked="checked"
+                                                                                  value="fba">&nbsp;FBA</label>
+                                        <label class="checkbox-inline"><input type="checkbox"
+                                                                                  name="name_shipped_by"
+                                                                                  checked="checked"
+                                                                                  value="fbm">&nbsp;FBM</label>
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-control-label font-weight-600">产品类型</label>
+                                    </div>
+
+                                    <div class="form-group">
+
+                                        <label class="checkbox-inline"><input type="checkbox"
+                                                                                  checked="checked"
+                                                                                  name=""
+                                                                                  value=""
+                                                                                  id="id_product_type">&nbsp;全部</label>
+                                        <label class="checkbox-inline"><input type="checkbox"
+                                                                                  name="name_product_type"
+                                                                                  checked="checked"
+                                                                                  value="sponsored">&nbsp;广告</label>
+                                        <label class="checkbox-inline"><input type="checkbox"
+                                                                                  name="name_product_type"
+                                                                                  checked="checked"
+                                                                                  value="organic">&nbsp;自然排名</label>
+
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label class="form-control-label font-weight-600">卖家类型</label>
+                                    </div>
+
+                                    <div class="form-group">
+
+                                        <label class="checkbox-inline"><input type="checkbox"
+                                                                                      checked="checked"
+                                                                                      name=""
+                                                                                      value=""
+                                                                                      id="id_seller_from">&nbsp;全部</label>
+                                        <label class="checkbox-inline"><input type="checkbox"
+                                                                                      name="name_seller_from"
+                                                                                      checked="checked"
+                                                                                      value="China">&nbsp;国内</label>
+                                        <label class="checkbox-inline"><input type="checkbox"
+                                                                                      name="name_seller_from"
+                                                                                      checked="checked"
+                                                                                      value="Amazon">&nbsp;亚马逊</label>
+                                        <label class="checkbox-inline"><input type="checkbox"
+                                                                                      name="name_seller_from"
+                                                                                      checked="checked"
+                                                                                      value="Local">&nbsp;本土</label>
+
+                                        <label class="checkbox-inline"><input type="checkbox"
+                                                                                      name="name_seller_from"
+                                                                                      checked="checked"
+                                                                                      value="Overseas">&nbsp;海外</label>
+
+                                        <label class="checkbox-inline"><input type="checkbox"
+                                                                                  name="name_seller_from"
+                                                                                  checked="checked"
+                                                                                  value="Unknown">&nbsp;未知</label>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="row">
+
+                                <div id="toolbar" class="form-inline mb-10 mt-10">
+
+                                    <div class="form-group">
+                                        <button id="id_btn_filter" type="button" class="btn btn btn-secondary">
+                                                <i class="icon fa-filter" aria-hidden="true"></i>
+                                                过滤
+                                            </button>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button id="id_btn_refresh" type="button" class="btn btn-warning">
+                                                <i class="icon fa-refresh" aria-hidden="true"></i>
+                                                刷新表格
+                                            </button>
+                                    </div>
+
+
+                                    <div class="btn-group mr-10">
+                                        <button type="button" class="btn btn-icon btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" aria-hidden="true">
+                                                <i class="icon wb-wrench" aria-hidden="true"></i>
+                                            </button>
+                                        <div class="dropdown-menu" role="menu" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -139px, 0px);">
+                                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                                                <i class="icon wb-trash" aria-hidden="true"></i> 删除所选
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                                                <i class="icon fa-file-excel-o" aria-hidden="true"></i> 导出csv
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                                                <i class="icon fa-file-archive-o" aria-hidden="true"></i> 导出cxf文件(支持倒入导出）
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                                                <i class="icon wb-rubber" aria-hidden="true"></i> 清空数据
+                                            </a>
+
+                                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                                                <label for="id_upload_json" style="justify-content:left;"><i
+                                                            class="icon fa-recycle"></i> 导入数据源(.cxf文件)</label>
+                                                <input id="id_upload_json" type="file" style="display:none">
+                                            </a>
+
+
+                                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                                                <i class="icon fa-chain-broken" aria-hidden="true"></i> 标记为未下载
+                                            </a>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="btn-group mr-10">
+                                        <button type="button" class="btn btn-icon btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" aria-hidden="true">
+                                                    <i class="icon fa-cloud-upload" aria-hidden="true"></i>
+                                                </button>
+                                        <div class="dropdown-menu" role="menu" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -139px, 0px);">
+                                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                                                <i class="icon fa-cloud-upload"></i> 提交详情到云端
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                                                <i class="icon fa-cloud-download" aria-hidden="true"></i>同步详情到本地
+                                            </a>
+
+                                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                                                <i class="icon fa-download" aria-hidden="true"></i>下载云端任务到本地
+                                            </a>
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                    <div class="form-group ml-20">
+
+                                        <label class="form-control-label font-weight-600"></label>
+                                        <select id="id_limit" class="form-control form-control-sm w-100">
+                                                    <option value="1">1个线程(单线程很稳定）</option>
+                                                    <option value="2">2个线程(稳定）</option>
+                
+                                                    <option value="3" selected="selected">3个线程(最佳）</option>
+                                                    <option value="5">5个线程（尚可）</option>
+                                                    <option value="10">10个线程(风险，请配合VPN切换IP使用)</option>
+                                                    <option value="10">15个线程(高风险，请配合VPN切换IP使用)</option>
+                                                    <option value="10">20个线程(高风险，请配合VPN切换IP使用)</option>
+                
+                                                </select>&nbsp;
+                                        <button id="id_btn_get_details" type="button" class="btn btn-secondary">详情下载
+                                            </button>
+                                    </div>
+
+
+
+
+
+
+                                    <div class="form-group">
+                                        <button id="id_btn_seller_request" type="button" class="btn btn btn-secondary">
+                                                    <i class="icon fa-database" aria-hidden="true"></i>
+                                                    卖家同步
+                                                </button>
+                                    </div>
+
+
+
+                                    <div class="form-group">
+                                        <div class="checkbox-custom checkbox-default">
+                                            <input type="checkbox" id="id_view_toogle" autocomplete="off">
+                                            <label for="id_view_toogle">全视图</label>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-condensed table-hover table-bordered" id="id_table">
+                                    </table>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </section>
+            <!-- End Portfolio Details Section -->
+
+
+        </main>
+
+    </div>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-info">
+                            <h3>EASYAMZ</h3>
+                            <p>
+                                微信客服: wooseeker<br> 公众号: easyamz<br>
+                            </p>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>我们的服务</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">插件定制</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">爬虫定制</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a name="contact" href="#">数据下载</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                        <h4>联系我们</h4>
+                        <p>可以通过微信，公众号，新浪微博来联系我们！</p>
+                        <img height="80" src="/images/wechart1.png">
+                        <img class="pl-20" height="80" src="/images/gzh.png" />
+                        <img class="pl-20" height="80" src="/images/sina.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright pt-10">
+                &copy; Copyright <strong><span>easyamz.com</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                Designed by <a target="_blank" href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top"><i class="icon fa-level-up"></i></a>
+
+
+    <script src="../assets/js/venders/Jquery/jquery-latest.min.js"></script>
+
+
+    <!-- Vendor JS Files -->
+    <script src="/assets/js/venders/Bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/venders/bootstrap-table/bootstrap-table.js"></script>
+    <script src="/assets/js/venders/bootstrap-table/extensions/bootstrap-table-zh-CN.min.js"></script>
+    <script src="/assets/js/venders/jquery-lazyload/jquery.lazyload.min.js"></script>
+    <script src="/assets/js/venders/jquery.dataTables/jquery.dataTables.min.js"></script>
+    <script src="/assets/js/venders/dataTables.buttons/dataTables.buttons.min.js"></script>
+    <script src="/assets/js/venders/buttons.html5/buttons.html5.min.js"></script>
+    <script src="/assets/js/venders/popperjs/tippy-bundle.umd.min.js"></script>
+    <script src="/assets/js/venders/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/js/venders/aspieprogress/jquery-asPieProgress.min.js"></script>
+    <script src="/assets/js/venders/select2/select2.min.js"></script>
+    <!--<script src="/assets/js/venders/Jquery.cookies/js.cookie.min.js"></script>-->
+    <script src="/assets/js/venders/Jquery.cookies/jquery.cookie.js"></script>
+
+    <script src="/assets/js/venders/bootstrap-select/bootstrap-select.min.js"></script>
+
+
+    <script src="/assets/js/venders/c3_chart/d3-5.8.2.min.js"></script>
+    <script src="/assets/js/venders/c3_chart/c3.min-0.7.11.js"></script>
+    <script src="/assets/js/venders/dexie.js/dexie.js"></script>
+
+
+    <script src="/scripts/Entity/Message.js"></script>
+    <script src="/scripts/Entity/Response.js"></script>
+
+    <script src="/scripts/Helper/prototype.js"></script>
+
+
+    <script src="/scripts/Entity/Const.js"></script>
+    <script src="/scripts/API.js"></script>
+    <script src="/scripts/API/Amazon.js"></script>
+    <script src="/scripts/API/Marketplace.js"></script>
+    <script src="/scripts/Helper.js"></script>
+    <script src="/scripts/Helper/Number.js"></script>
+    <script src="/scripts/Helper/Array.js"></script>
+    <script src="/scripts/Helper/Export.js"></script>
+    <script src="/scripts/Helper/String.js"></script>
+    <script src="/scripts/Helper/Request.js"></script>
+    <script src="/scripts/Helper/Functions.js"></script>
+    <script src="/scripts/Helper/Date.js"></script>
+    <script src="/scripts/Helper/Cookies.js"></script>
+
+
+    <script src="/scripts/Helper/Validator.js"></script>
+
+    <script src="/scripts/API/APP.js"></script>
+
+    <!--<script src="/scripts/Pages/test.js"></script>-->
+    <script src="/scripts/Pages/bestsellers_spider.js"></script>
+
+
+
+</body>
+
+</html>

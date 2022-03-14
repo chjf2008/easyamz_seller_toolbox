@@ -1,0 +1,93 @@
+{
+    "name": "__MSG_extName__",
+    "short_name": "__MSG_extShortName__",
+    "default_locale": "zh_CN",
+    "manifest_version": 2,
+    "version": "4.2.2",
+    "description": "__MSG_extDesc__",
+    "options_page": "options.html",
+    "background": {
+        "scripts": [
+            "assets/js/venders/Jquery/jquery-latest.min.js",
+            "scripts/Entity/Message.js",
+            "scripts/Entity/Const.js",
+            "scripts/Entity/Response.js",
+            "scripts/API.js",
+            "scripts/API/APP.js",
+            "scripts/API/Amazon.js",
+            "scripts/Helper.js",
+            "scripts/Helper/Functions.js",
+            "scripts/Helper/Request.js",
+            "scripts/Helper/Validator.js",
+            "scripts/background/services/Login.js",
+            "scripts/background/LoginHandler.js",
+            "scripts/Entity/Response.js",
+            "scripts/background.js"
+        ],
+        "persistent": false
+    },
+    "browser_action": {
+        "default_popup": "",
+        "default_title": "EasyAMZ 亚马逊产品调研，选品辅助。",
+        "default_icon": {
+            "16": "images/icons/img16.png",
+            "32": "images/icons/img32.png",
+            "48": "images/icons/img48.png",
+            "128": "images/icons/img128.png"
+        }
+    },
+    "icons": {
+        "16": "images/icons/img16.png",
+        "32": "images/icons/img32.png",
+        "48": "images/icons/img48.png",
+        "128": "images/icons/img128.png"
+    },
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "cookies",
+        "storage"
+    ],
+    "web_accessible_resources": [
+        "images/*.gif",
+        "plugins/*",
+        "assets/js/venders/Bootstrap/bootstrap.min.css"
+    ],
+    "content_scripts": [{
+        "matches": [
+            "https://www.amazon.de/*",
+            "https://www.amazon.fr/*",
+            "https://www.amazon.co.uk/*",
+            "https://www.amazon.it/*",
+            "https://www.amazon.es/*",
+            "https://www.amazon.com/*",
+            "https://www.amazon.cn/*",
+            "https://www.amazon.co.jp/*",
+            "https://www.amazon.com.au/*",
+            "https://www.amazon.ca/*",
+            "https://www.amazon.sg/*",
+            "https://www.amazon.in/*",
+            "https://www.amazon.com.br/*",
+            "https://www.amazon.ae/*",
+            "https://www.amazon.com.mx/*",
+            "https://www.amazon.com.tr/*",
+            "https://www.amazon.nl/*",
+            "https://www.amazon.sa/*"
+        ],
+        "js": [
+            "assets/js/venders/Jquery/jquery-latest.min.js",
+            "assets/js/venders/Bootstrap/bootstrap.bundle.min.js",
+            "scripts/Entity/Const.js",
+            "scripts/API.js",
+            "scripts/API/APP.js",
+            "scripts/Entity/Const.js",
+            "scripts/Helper.js",
+            "scripts/API/Amazon.js",
+            "scripts/API/Marketplace.js",
+            "scripts/Helper/Request.js",
+            "assets/js/venders/dexie.js/dexie.js",
+            "scripts/content-script.js"
+        ],
+        "run_at": "document_start"
+    }]
+}

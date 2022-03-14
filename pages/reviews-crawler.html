@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>easyamz亚马逊产品评论下载</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="/assets/img/favicon.png" rel="icon">
+    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+
+    <!-- Vendor CSS Files -->
+    <link rel="stylesheet" href="/assets/js/venders/Bootstrap/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/assets/css/bootstrap-extend.min.css">
+    <link rel="stylesheet" href="/assets/css/vendor/flag-icon-css/flag-icon.min.css">
+    <link rel="stylesheet" href="/assets/js/venders/jquery.dataTables/jquery.dataTables.min.css">
+
+    <link rel="stylesheet" href="/assets/js/venders/bootstrap-table/bootstrap-table.min.css">
+    <link rel="stylesheet" href="/assets/css/vendor/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/vendor/web-icons/web-icons.min.css">
+    <link rel="stylesheet" href="/assets/js/venders/magnific-popup/magnific-popup.min.css">
+    <link rel="stylesheet" href="/assets/js/venders/jquery.dataTables/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="/assets/js/venders/icofont/icofont.min.css">
+    <link rel="stylesheet" href="/assets/js/venders/select2/select2.min.css">
+
+    <link rel="stylesheet" href="/assets/js/venders/bootstrap-tokenfield/bootstrap-tokenfield.min.css">
+
+
+    <link rel="stylesheet" href="/assets/css/site.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <style>
+        .token {
+            padding-right: 25px;
+        }
+    </style>
+
+</head>
+
+<body class="p-0 m-0">
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
+
+            <h1 class="logo mr-auto"><a id="id_app_title" href="/pages/home.html">easyamz</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+            <nav class="nav-menu d-none d-lg-block">
+                <ul>
+                    <li class="active"><a href="/pages/home.html">首页</a></li>
+                    <li><a href="/pages/tutorial.html">教程</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+            <!-- .nav-menu -->
+
+            <a href="#" class="get-started-btn scrollto">登录</a>
+
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <main id="main">
+
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs pt-5 pb-5 mt-80">
+            <div class="container">
+
+                <div class="d-flex justify-content-between align-items-center text-left">
+                    <h4>评论下载</h4>
+                    <ol>
+                        <li><a href="/pages/home.html">工具箱首页</a></li>
+                        <li>评论下载</li>
+                    </ol>
+                </div>
+
+            </div>
+        </section>
+        <!-- End Breadcrumbs -->
+
+        <!-- ======= Portfolio Details Section ======= -->
+        <section class="content pt-10 pb-10">
+            <div class="panel">
+
+                <div class="panel-body pt-5">
+
+                    <div class="row">
+                        <div class="col-md-12 text-left">
+                            <p class="grey-500">
+                                <i class="icon fa-microphone blue-600"></i> 搜索结果基于本电脑浏览器配置,下载速度取决于电脑网速。
+                                <br>
+                            </p>
+                            <p><i class="icon fa-warning red-600"></i> 利用本插件高频次下载亚马逊数据，会导致无法正常打开亚马逊页面，轻则需要输入验证码，重则禁止访问亚马逊。 请合理使用本插件!!！
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div id="id_err_message" role="alert" class="alert alert-danger alert-dismissible" style="display: none;">
+
+                    </div>
+                    <div role="alert" class="alert alert-alt alert-info alert-dismissible">
+
+                        <div class="row pl-10">
+                            <div class="form-group form-inline mb-5 pt-10" id="id_counter" style="display:none;">
+                                <img src="../images/loading.gif" height="20" width="20" />
+                                <h5 class="pl-10">请勿刷新网页，数据更新中...</h5>
+                            </div>
+                        </div>
+
+
+                        <fieldset>
+                            <legend>操作区</legend>
+
+
+                            <div class="form-inline row text-left pl-10">
+
+
+                                <div class="form-group">
+                                    <select class="form-control w-150" id="id_marketplace">
+            
+            
+                                        <option value="">选择市场</option>
+            
+            
+                                        <!---->
+                                        <!--<optgroup label="美洲市场">-->
+                                        <!--<option value="com">美国</option>-->
+                                        <!--<option value="ca">加拿大</option>-->
+                                        <!--<option value="com.mx">墨西哥</option>-->
+                                        <!--<option value="com.br">巴西</option>-->
+                                        <!--</optgroup>-->
+                                        <!--<optgroup label="美洲市场">-->
+                                        <!--<option value="co.uk">英国</option>-->
+                                        <!--<option value="de">德国</option>-->
+                                        <!--<option value="fr">法国</option>-->
+                                        <!--<option value="it">意大利</option>-->
+                                        <!--<option value="es">西班牙</option>-->
+                                        <!--<option value="nl">荷兰</option>-->
+                                        <!--</optgroup>-->
+                                        <!--<optgroup label="亚洲市场">-->
+                                        <!--<option value="co.jp">日本</option>-->
+                                        <!--<option value="sg">新加坡</option>-->
+                                        <!--<option value="in">印度</option>-->
+                                        <!--<option value="sa">沙特</option>-->
+                                        <!--<option value="ae">阿拉伯酋长国</option>-->
+            
+                                        <!--</optgroup>-->
+                                        <!--<optgroup label="澳洲市场">-->
+                                        <!--<option value="com.au">澳大利亚</option>-->
+                                        <!--</optgroup>-->
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" id="id_asin" class="form-control" placeholder="输入ASIN" value="">
+                                </div>
+
+                                <div class="form-group">
+                                    <button id="id_btn_apply" class="btn btn-primary"><i class="icon fa-play-circle"
+                                                                                         aria-hidden="true"></i>开始
+                                    </button>
+                                </div>
+
+
+                                <!--<div class="form-group">-->
+                                <!--<button id="id_btn_stop" class="btn btn-warning"><i class="icon fa-stop-circle"></i> 停止</button>-->
+                                <!--</div>-->
+
+
+                            </div>
+
+                        </fieldset>
+
+
+                        <div class="table-responsive mt-20">
+
+                            <fieldset class="mb-10">
+                                <legend>数据过滤</legend>
+
+
+                                <div>
+                                    <div class="form-inline">
+                                        <div class="form-group">
+                                            <div class="form-group">
+                                                搜索:
+                                            </div>
+                                            <div class="input-group">
+
+                                                <select class="form-control form-control-sm" style="width:95px;" id="id_txt_search_field">
+                                                    <option value="">不限</option>
+                                                    <option value="title">评论标题</option>
+                                                    <option value="content">评论内容</option>
+                                                    <option value="reviewer">评论人</option>
+                                                </select>&nbsp;
+
+                                                <input type="input" class="form-control form-control-sm" style="width:470px;" id="id_search_keywords" placeholder="支持模糊搜索，不区分大小写！">
+                                            </div>
+                                        </div>
+                                        <!--<div class="form-group">-->
+                                        <!--<label class="sr-only" for="msg_type">消息类型</label>-->
+                                        <!--<div class="input-group">-->
+                                        <!--<div class="input-group-addon">消息类型</div>-->
+                                        <!--<select class="form-control" name="msg_type" id="msgType">-->
+                                        <!--<option value="">请选择消息类型...</option>-->
+                                        <!--</select>-->
+                                        <!--</div>-->
+                                        <!--</div>-->
+
+                                    </div>
+
+                                    <div class="form-inline mt-10">
+                                        <div class="form-group">
+                                            评分:
+                                        </div>
+                                        <div class="form-group">
+                                            <input id="id_rating_min" type="text" class="form-control form-control-sm w-60" placeholder="最低分" autocomplete="off">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input id="id_rating_max" type="text" class="form-control form-control-sm w-60" placeholder="最高分" autocomplete="off">
+                                        </div>
+
+                                        <div class="form-group">投票数:
+                                        </div>
+                                        <div class="form-group">
+                                            <input id="id_helpful_vote_min" type="text" class="form-control form-control-sm w-60" placeholder="最小值" autocomplete="off">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input id="id_helpful_vote_max" type="text" class="form-control form-control-sm w-60" placeholder="最大值" autocomplete="off">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="checkbox-custom checkbox-default">
+                                                <input style="line-height: 20px;" type="checkbox" id="id_have_images">
+                                                <label for="id_have_images">有图片</label>
+                                            </div>
+                                            <div class="checkbox-custom checkbox-default ml-10">
+                                                <input style="line-height: 20px;" type="checkbox" id="id_have_videos" autocomplete="off">
+                                                <label for="id_have_videos">有视频</label>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <button id="id_btn_filter" type="button" class="btn btn-primary waves-effect waves-classic">
+                                                <i class="icon fa-filter" aria-hidden="true"></i>
+                                                筛选
+                                            </button>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <button id="id_download" type="button" class="btn btn-primary waves-effect waves-classic"><i
+                                                    class="icon fa-download" aria-hidden="true"></i>导出
+                                            </button>
+                                        </div>
+
+                                        <!--<div class="form-group">-->
+                                        <!--<button id="id_clear_selected" type="button"-->
+                                        <!--class="btn btn-primary btn-danger">删除所选-->
+                                        <!--</button>-->
+                                        <!--</div>-->
+
+
+                                        <div class="form-group">
+                                            <button id="id_btn_clear" class="btn btn-primary btn-danger"><i
+                                                    class="icon fa-remove"></i>清空数据
+                                            </button>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                            </fieldset>
+
+                            <table id="id_table" class="table table-striped table-condensed table-hover table-bordered" style="table-layout:fixed;">
+                                <td class="text-center" colspan="12" style="height: 150px;">暂无数据！</td>
+                            </table>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="panel" id="id_words_fr">
+
+                <div class="panel-body pt-0">
+                    <div role="alert" class="alert alert-alt alert-info alert-dismissible">
+
+
+                        <fieldset class="mb-10">
+                            <legend>数据选项</legend>
+
+                            <div class="row">
+
+                                <div class="form-inline">
+                                    <div class="form-group"><label class="form-control-label font-weight-600 w-80 text-right" style="display:block;">数据来源</label></div>
+                                    <div class="form-group">
+                                        <label class="checkbox-inline"><input type="radio" checked value=""
+                                                                                  name="data_source">&nbsp;不限</label>
+                                        <label class="checkbox-inline"><input type="radio" value="title" name="data_source">&nbsp;标题</label>
+                                        <label class="checkbox-inline"><input type="radio" value="content" name="data_source">&nbsp;评论内容</label>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+
+                                <div class="form-inline">
+                                    <div class="form-group"><label class="form-control-label font-weight-600 w-80 text-right" style="display:block;">评星</label></div>
+                                    <div class="form-group">
+                                        <label class="checkbox-inline"><input type="checkbox" name="checkall"
+                                                                                  checked>&nbsp;所有</label>
+
+                                        <label class="checkbox-inline"><input type="checkbox" value="1"
+                                                                                  name="star">&nbsp;1星</label>
+                                        <label class="checkbox-inline"><input type="checkbox" value="2"
+                                                                                  name="star">&nbsp;2星</label>
+                                        <label class="checkbox-inline"><input type="checkbox" value="3"
+                                                                                  name="star">&nbsp;3星</label>
+                                        <label class="checkbox-inline"><input type="checkbox" value="4"
+                                                                                  name="star">&nbsp;4星</label>
+                                        <label class="checkbox-inline"><input type="checkbox" value="5"
+                                                                                  name="star">&nbsp;5星</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </fieldset>
+
+
+                        <fieldset class="mb-10">
+                            <legend>过滤选项</legend>
+                            <div class="row">
+                                <div class="form-inline">
+                                    <div class="form-group"><label class="form-control-label font-weight-600 w-80 text-right" style="display:block;">冠词</label></div>
+                                    <div class="form-group"> <label class="checkbox-inline"><input type="checkbox" name="checkall">&nbsp;全选</label> <label class="checkbox-inline"><input checked="checked" value="a" name="words" type="checkbox">&nbsp;a </label> <label class="checkbox-inline"><input checked="checked" value="an" name="words" type="checkbox">&nbsp;an </label>                                        <label class="checkbox-inline"><input checked="checked" value="the" name="words" type="checkbox">&nbsp;the </label> </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-inline">
+                                    <div class="form-group"><label class="form-control-label font-weight-600 w-80 text-right" style="display:block;">疑问词</label></div>
+                                    <div class="form-group"> <label class="checkbox-inline"><input type="checkbox" name="checkall">&nbsp;全选</label> <label class="checkbox-inline"><input checked="checked" value="what" name="words" type="checkbox">&nbsp;what </label> <label class="checkbox-inline"><input checked="checked" value="where" name="words" type="checkbox">&nbsp;where </label>                                        <label class="checkbox-inline"><input checked="checked" value="when" name="words" type="checkbox">&nbsp;when </label> <label class="checkbox-inline"><input checked="checked" value="how" name="words" type="checkbox">&nbsp;how </label>                                        <label class="checkbox-inline"><input checked="checked" value="why" name="words" type="checkbox">&nbsp;why </label> <label class="checkbox-inline"><input checked="checked" value="which" name="words" type="checkbox">&nbsp;which </label>                                        </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-inline">
+                                    <div class="form-group"><label class="form-control-label font-weight-600 w-80 text-right" style="display:block;">动词</label></div>
+                                    <div class="form-group"> <label class="checkbox-inline"><input type="checkbox" name="checkall">&nbsp;全选</label> <label class="checkbox-inline"><input checked="checked" value="is" name="words" type="checkbox">&nbsp;is </label> <label class="checkbox-inline"><input checked="checked" value="was" name="words" type="checkbox">&nbsp;was </label>                                        <label class="checkbox-inline"><input checked="checked" value="were" name="words" type="checkbox">&nbsp;were </label> <label class="checkbox-inline"><input checked="checked" value="are" name="words" type="checkbox">&nbsp;are </label>                                        <label class="checkbox-inline"><input checked="checked" value="have" name="words" type="checkbox">&nbsp;have </label> <label class="checkbox-inline"><input checked="checked" value="has" name="words" type="checkbox">&nbsp;has </label>                                        <label class="checkbox-inline"><input checked="checked" value="be" name="words" type="checkbox">&nbsp;be </label> <label class="checkbox-inline"><input checked="checked" value="do" name="words" type="checkbox">&nbsp;do </label>
+                                        <label class="checkbox-inline"><input checked="checked" value="didbecome" name="words" type="checkbox">&nbsp;didbecome </label> <label class="checkbox-inline"><input checked="checked" value="get" name="words" type="checkbox">&nbsp;get </label>                                        <label class="checkbox-inline"><input checked="checked" value="seem" name="words" type="checkbox">&nbsp;seem </label> <label class="checkbox-inline"><input checked="checked" value="can" name="words" type="checkbox">&nbsp;can </label>                                        <label class="checkbox-inline"><input checked="checked" value="will" name="words" type="checkbox">&nbsp;will </label> <label class="checkbox-inline"><input checked="checked" value="could" name="words" type="checkbox">&nbsp;could </label>                                        <label class="checkbox-inline"><input checked="checked" value="should" name="words" type="checkbox">&nbsp;should </label> <label class="checkbox-inline"><input checked="checked" value="would" name="words" type="checkbox">&nbsp;would </label>                                        </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-inline">
+                                    <div class="form-group"><label class="form-control-label font-weight-600 w-80 text-right" style="display:block;">主语</label></div>
+                                    <div class="form-group"> <label class="checkbox-inline"><input type="checkbox" name="checkall">&nbsp;全选</label> <label class="checkbox-inline"><input checked="checked" value="I" name="words" type="checkbox">&nbsp;I </label> <label class="checkbox-inline"><input checked="checked" value="we" name="words" type="checkbox">&nbsp;we </label>                                        <label class="checkbox-inline"><input checked="checked" value="you" name="words" type="checkbox">&nbsp;you </label> <label class="checkbox-inline"><input checked="checked" value="they" name="words" type="checkbox">&nbsp;they </label>                                        <label class="checkbox-inline"><input checked="checked" value="he" name="words" type="checkbox">&nbsp;he </label> <label class="checkbox-inline"><input checked="checked" value="she" name="words" type="checkbox">&nbsp;she </label>
+                                        <label class="checkbox-inline"><input checked="checked" value="them" name="words" type="checkbox">&nbsp;them </label> <label class="checkbox-inline"><input checked="checked" value="it" name="words" type="checkbox">&nbsp;it </label>                                        <label class="checkbox-inline"><input checked="checked" value="my" name="words" type="checkbox">&nbsp;my </label> <label class="checkbox-inline"><input checked="checked" value="his" name="words" type="checkbox">&nbsp;his </label>
+                                        <label class="checkbox-inline"><input checked="checked" value="our" name="words" type="checkbox">&nbsp;our </label> <label class="checkbox-inline"><input checked="checked" value="your" name="words" type="checkbox">&nbsp;your </label>                                        <label class="checkbox-inline"><input checked="checked" value="its" name="words" type="checkbox">&nbsp;its </label> <label class="checkbox-inline"><input checked="checked" value="her" name="words" type="checkbox">&nbsp;her </label>                                        </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-inline">
+                                    <div class="form-group"><label class="form-control-label font-weight-600 w-80 text-right" style="display:block;">限定词</label></div>
+                                    <div class="form-group"> <label class="checkbox-inline"><input type="checkbox" name="checkall">&nbsp;全选</label> <label class="checkbox-inline"><input checked="checked" value="some" name="words" type="checkbox">&nbsp;some </label> <label class="checkbox-inline"><input checked="checked" value="all" name="words" type="checkbox">&nbsp;all </label>                                        <label class="checkbox-inline"><input checked="checked" value="both" name="words" type="checkbox">&nbsp;both </label> <label class="checkbox-inline"><input checked="checked" value="this" name="words" type="checkbox">&nbsp;this </label>                                        <label class="checkbox-inline"><input checked="checked" value="that" name="words" type="checkbox">&nbsp;that </label> <label class="checkbox-inline"><input checked="checked" value="these" name="words" type="checkbox">&nbsp;these </label>                                        <label class="checkbox-inline"><input checked="checked" value="those" name="words" type="checkbox">&nbsp;those </label> <label class="checkbox-inline"><input checked="checked" value="any" name="words" type="checkbox">&nbsp;any </label>                                        <label class="checkbox-inline"><input checked="checked" value="only" name="words" type="checkbox">&nbsp;only </label> <label class="checkbox-inline"><input checked="checked" value="either" name="words" type="checkbox">&nbsp;either </label>                                        <label class="checkbox-inline"><input checked="checked" value="neither" name="words" type="checkbox">&nbsp;neither </label> </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-inline">
+                                    <div class="form-group"><label class="form-control-label font-weight-600 w-80 text-right" style="display:block;">连词</label></div>
+                                    <div class="form-group"> <label class="checkbox-inline"><input type="checkbox" name="checkall">&nbsp;全选</label> <label class="checkbox-inline"><input checked="checked" value="for" name="words" type="checkbox">&nbsp;for </label> <label class="checkbox-inline"><input checked="checked" value="and" name="words" type="checkbox">&nbsp;and </label>                                        <label class="checkbox-inline"><input checked="checked" value="or" name="words" type="checkbox">&nbsp;or </label> <label class="checkbox-inline"><input checked="checked" value="also" name="words" type="checkbox">&nbsp;also </label>                                        <label class="checkbox-inline"><input checked="checked" value="however" name="words" type="checkbox">&nbsp;however </label> <label class="checkbox-inline"><input checked="checked" value="with" name="words" type="checkbox">&nbsp;with </label>                                        <label class="checkbox-inline"><input checked="checked" value="but" name="words" type="checkbox">&nbsp;but </label> <label class="checkbox-inline"><input checked="checked" value="so" name="words" type="checkbox">&nbsp;so </label>
+                                        <label class="checkbox-inline"><input checked="checked" value="either" name="words" type="checkbox">&nbsp;either </label> <label class="checkbox-inline"><input checked="checked" value="nor" name="words" type="checkbox">&nbsp;nor </label>                                        <label class="checkbox-inline"><input checked="checked" value="therefore" name="words" type="checkbox">&nbsp;therefore </label> <label class="checkbox-inline"><input checked="checked" value="yet" name="words" type="checkbox">&nbsp;yet </label>                                        <label class="checkbox-inline"><input checked="checked" value="while" name="words" type="checkbox">&nbsp;while </label> </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-inline">
+                                    <div class="form-group"><label class="form-control-label font-weight-600 w-80 text-right" style="display:block;">介词1</label></div>
+                                    <div class="form-group"> <label class="checkbox-inline"><input type="checkbox" name="checkall">&nbsp;全选</label> <label class="checkbox-inline"><input checked="checked" value="of" name="words" type="checkbox">&nbsp;of </label> <label class="checkbox-inline"><input checked="checked" value="off" name="words" type="checkbox">&nbsp;off </label>                                        <label class="checkbox-inline"><input checked="checked" value="if" name="words" type="checkbox">&nbsp;if </label> <label class="checkbox-inline"><input checked="checked" value="at" name="words" type="checkbox">&nbsp;at </label>
+                                        <label class="checkbox-inline"><input checked="checked" value="on" name="words" type="checkbox">&nbsp;on </label> <label class="checkbox-inline"><input checked="checked" value="it" name="words" type="checkbox">&nbsp;it </label>
+                                        <label class="checkbox-inline"><input checked="checked" value="to" name="words" type="checkbox">&nbsp;to </label> <label class="checkbox-inline"><input checked="checked" value="in" name="words" type="checkbox">&nbsp;in </label>
+                                        <label class="checkbox-inline"><input checked="checked" value="before" name="words" type="checkbox">&nbsp;before </label> <label class="checkbox-inline"><input checked="checked" value="after" name="words" type="checkbox">&nbsp;after </label>                                        <label class="checkbox-inline"><input checked="checked" value="under" name="words" type="checkbox">&nbsp;under </label> <label class="checkbox-inline"><input checked="checked" value="within" name="words" type="checkbox">&nbsp;within </label>                                        <label class="checkbox-inline"><input checked="checked" value="inside" name="words" type="checkbox">&nbsp;inside </label> <label class="checkbox-inline"><input checked="checked" value="outside" name="words" type="checkbox">&nbsp;outside </label>                                        </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-inline">
+                                    <div class="form-group"><label class="form-control-label font-weight-600 w-80 text-right" style="display:block;">介词2</label></div>
+                                    <div class="form-group"> <label class="checkbox-inline"><input type="checkbox" name="checkall">&nbsp;全选</label> <label class="checkbox-inline"><input checked="checked" value="even" name="words" type="checkbox">&nbsp;even </label> <label class="checkbox-inline"><input checked="checked" value="than" name="words" type="checkbox">&nbsp;than </label>                                        <label class="checkbox-inline"><input checked="checked" value="about" name="words" type="checkbox">&nbsp;about </label> <label class="checkbox-inline"><input checked="checked" value="as" name="words" type="checkbox">&nbsp;as </label>                                        <label class="checkbox-inline"><input checked="checked" value="but" name="words" type="checkbox">&nbsp;but </label> <label class="checkbox-inline"><input checked="checked" value="though" name="words" type="checkbox">&nbsp;though </label>                                        <label class="checkbox-inline"><input checked="checked" value="so" name="words" type="checkbox">&nbsp;so </label> </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-inline">
+                                    <div class="form-group"><label class="form-control-label font-weight-600 w-80 text-right" style="display:block;">数字</label></div>
+                                    <div class="form-group"> <label class="checkbox-inline"><input type="checkbox" name="checkall">&nbsp;全选</label> <label class="checkbox-inline"><input checked="checked" value="0" name="words" type="checkbox">&nbsp;0 </label> <label class="checkbox-inline"><input checked="checked" value="1" name="words" type="checkbox">&nbsp;1 </label>                                        <label class="checkbox-inline"><input checked="checked" value="2" name="words" type="checkbox">&nbsp;2 </label> <label class="checkbox-inline"><input checked="checked" value="3" name="words" type="checkbox">&nbsp;3 </label>
+                                        <label class="checkbox-inline"><input checked="checked" value="4" name="words" type="checkbox">&nbsp;4 </label> <label class="checkbox-inline"><input checked="checked" value="5" name="words" type="checkbox">&nbsp;5 </label>
+                                        <label class="checkbox-inline"><input checked="checked" value="6" name="words" type="checkbox">&nbsp;6 </label> <label class="checkbox-inline"><input checked="checked" value="7" name="words" type="checkbox">&nbsp;7 </label>
+                                        <label class="checkbox-inline"><input checked="checked" value="8" name="words" type="checkbox">&nbsp;8 </label>
+                                        <label class="checkbox-inline"><input checked="checked" value="9" name="words" type="checkbox">&nbsp;9 </label> <label class="checkbox-inline"><input checked="checked" value="10" name="words" type="checkbox">&nbsp;10 </label>                                        </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="form-inline">
+                                    <div class="form-group"><label class="form-control-label font-weight-600 w-80 text-right" style="display:block;">自定义</label></div>
+
+                                    <div class="input-group w-500">
+                                        <input type="text" name="tokenfield" placeholder="输入您想过滤的单词，用逗号分隔">
+                                        <span class="input-group-append">
+                                        <button type="button" class="btn btn-primary"
+                                                name="name_clear_words">清空</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-10">
+                                <div class="col-md-12">
+                                    <div class="form-inline pl-100">
+                                        <div class="form-group">
+                                            <button id="id_reset_filter" type="button" class="btn btn-danger">重 置
+                                                </button>
+                                        </div>
+                                        <div class="form-group ml-30">
+                                            <button id="id_apply_filter" type="button" class="btn btn-primary">应 用
+                                                </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <hr>
+                        <fieldset class="mb-10">
+
+                            <legend>产品评论词频</legend>
+
+
+
+
+                            <div class="row pt-10 words">
+                                <div class="col-md-4 block-container">
+                                    <h4 class="text-center">一个词长</h4>
+                                    <hr>
+                                    <div class="table-container">
+                                        <table class="table table-striped table-bordered words_table_1" width="100%"></table>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-md-4 block-container">
+                                    <h4 class="text-center">二个词长</h4>
+                                    <hr>
+                                    <div class="table-container">
+                                        <table id="id_words_table_2" class="table table-striped table-bordered words_table_2" width="100%"></table>
+
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 block-container">
+                                    <h4 class="text-center">三个词长</h4>
+                                    <hr>
+                                    <div class="table-container">
+                                        <table id="id_words_table_3" class="table table-striped table-bordered  words_table_3" width="100%"></table>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+
+
+
+                            <div class="row words">
+
+                                <div class="col-md-6 mt-20 block-container">
+                                    <h4 class="text-center">四个词长</h4>
+                                    <hr>
+                                    <div class="table-container">
+                                        <table id="id_words_table_4" class="table table-striped table-bordered words_table_4" width="100%"></table>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mt-20 block-container">
+                                    <h4 class="text-center">五个词长</h4>
+                                    <hr>
+                                    <div class="table-container">
+                                        <table id="id_words_table_5" class="table table-striped table-bordered  words_table_5" width="100%"></table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                        </fieldset>
+
+
+                        <div id="words_cloud_1" class="row"></div>
+                        <div id="words_cloud_2" class="row"></div>
+                        <div id="words_cloud_3" class="row"></div>
+                        <div id="words_cloud_4" class="row"></div>
+                        <div id="words_cloud_5" class="row"></div>
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </section>
+        <!-- End Portfolio Details Section -->
+
+    </main>
+
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-info">
+                            <h3>EASYAMZ</h3>
+                            <p>
+                                微信客服: wooseeker<br> 公众号: easyamz<br>
+                            </p>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>我们的服务</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">插件定制</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">爬虫定制</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a name="contact" href="#">数据下载</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                        <h4>联系我们</h4>
+                        <p>可以通过微信，公众号，新浪微博来联系我们！</p>
+                        <img height="80" src="/images/wechart1.png">
+                        <img class="pl-20" height="80" src="/images/gzh.png" />
+                        <img class="pl-20" height="80" src="/images/sina.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright pt-10">
+                &copy; Copyright <strong><span>easyamz.com</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                Designed by <a target="_blank" href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top"><i class="icon fa-level-up"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/js/venders/Jquery/jquery-latest.min.js"></script>
+    <script src="/assets/js/venders/Bootstrap/bootstrap.bundle.min.js"></script>
+
+    <!--<script src="/assets/js/venders/bootstrap-table/bootstrap-table.min.js"></script>-->
+
+    <script src="/assets/js/venders/bootstrap-table/bootstrap-table.js"></script>
+    <script src="/assets/js/venders/bootstrap-table/extensions/bootstrap-table-zh-CN.min.js"></script>
+
+    <script src="/assets/js/venders/jquery.dataTables/jquery.dataTables.min.js"></script>
+    <script src="/assets/js/venders/dataTables.buttons/dataTables.buttons.min.js"></script>
+    <script src="/assets/js/venders/buttons.html5/buttons.html5.min.js"></script>
+    <script src="/assets/js/venders/jquery-lazyload/jquery.lazyload.min.js"></script>
+    <script src="/assets/js/venders/popperjs/popper.min.js"></script>
+    <script src="/assets/js/venders/popperjs/tippy-bundle.umd.min.js"></script>
+    <script src="/assets/js/venders/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/js/venders/select2/select2.min.js"></script>
+    <script src="/assets/js/venders/bootstrap-tokenfield/bootstrap-tokenfield.min.js"></script>
+    <script src="/assets/js/venders/Jquery.cookies/js.cookie.min.js"></script>
+    <script src="/assets/js/venders/bootbox/bootbox.min.js"></script>
+
+
+    <script src="/assets/js/venders/d3/d3.min.js"></script>
+    <script src="/assets/js/venders/d3/d3.layout.cloud.js"></script>
+
+
+    <script src="/assets/js/venders/dexie.js/dexie.js"></script>
+
+
+    <script src="/scripts/Entity/Message.js"></script>
+    <script src="/scripts/Entity/Response.js"></script>
+
+    <script src="/scripts/Entity/Const.js"></script>
+    <script src="/scripts/API.js"></script>
+    <script src="/scripts/API/Amazon.js"></script>
+    <script src="/scripts/API/Marketplace.js"></script>
+
+
+    <script src="/scripts/Helper.js"></script>
+    <script src="/scripts/Helper/Number.js"></script>
+    <script src="/scripts/Helper/Array.js"></script>
+    <script src="/scripts/Helper/Date.js"></script>
+
+    <script src="/scripts/Helper/Export.js"></script>
+    <script src="/scripts/Helper/String.js"></script>
+    <script src="/scripts/Helper/Cookies.js"></script>
+
+    <script src="/scripts/Helper/Request.js"></script>
+    <script src="/scripts/Helper/Functions.js"></script>
+    <script src="/scripts/Helper/Validator.js"></script>
+
+    <script src="/scripts/API/APP.js"></script>
+
+
+    <script src="/scripts/Pages/reviews_spider.js"></script>
+
+</body>
+
+</html>
